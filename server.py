@@ -1,5 +1,6 @@
 from os import environ
 from flask import Flask
+import bot
 
 app = Flask(__name__)
 @app.route("/")

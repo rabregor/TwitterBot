@@ -25,7 +25,7 @@ def format_tweet():
     return tweet
 
 def create_tweet():
-    interval = 60 * 60 * 12
+    interval = 60 * 60 * 24
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret_key)
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
