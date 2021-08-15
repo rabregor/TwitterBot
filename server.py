@@ -2,4 +2,9 @@ from os import environ
 from flask import Flask
 
 app = Flask(__name__)
-app.run(environ.get('PORT'))
+@app.route("/")
+def home():
+    bot.create_tweet()
+    return "Tweeting a quote..."
+
+app.run(host= '0.0.0.0', port=environ.get('PORT'))

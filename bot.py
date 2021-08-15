@@ -1,7 +1,6 @@
 import json
 import random 
 import tweepy
-import credentials
 import time
 import sys
 from os import environ
@@ -22,8 +21,8 @@ def format_tweet():
     quote = get_random_quote()
     Hashtag = " #ILoveBioinstrumentation"
     Funfact = "Fun fact: "
-    Tweet = Funfact + quote + Hashtag
-    return Tweet
+    tweet = Funfact + quote + Hashtag
+    return tweet
 
 def create_tweet():
     interval = 60 * 60 * 12
@@ -33,8 +32,8 @@ def create_tweet():
 
     while True:
         print('getting a random tweet...')
-        test_tweet = format_tweet()
-        api.update_status(test_tweet)
+        tweet = format_tweet()
+        api.update_status(tweet)
         time.sleep(interval)
 
 
